@@ -1,0 +1,651 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../replicate.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Getting Started - Cog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Cog" class="md-header__button md-logo" aria-label="Cog" data-md-component="logo">
+      
+  <img src="../replicate.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cog" class="md-nav__button md-logo" aria-label="Cog" data-md-component="logo">
+      
+  <img src="../replicate.png" alt="logo">
+
+    </a>
+    Cog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Cog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Getting Started
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-cog" class="md-nav__link">
+    Install Cog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    Create a project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-commands" class="md-nav__link">
+    Run commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-predictions-on-a-model" class="md-nav__link">
+    Run predictions on a model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-an-image" class="md-nav__link">
+    Build an image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started-own-model/" class="md-nav__link">
+        Using your own Model
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Cog Python API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yaml/" class="md-nav__link">
+        YAML Spec
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTRIBUTING/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/replicate/cog/blob/main/LICENSE" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-cog" class="md-nav__link">
+    Install Cog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    Create a project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-commands" class="md-nav__link">
+    Run commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-predictions-on-a-model" class="md-nav__link">
+    Run predictions on a model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-an-image" class="md-nav__link">
+    Build an image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h1>
+<p>This guide will walk you through what you can do with Cog by using an example model.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>macOS or Linux</strong>. Cog works on macOS and Linux, but does not currently support Windows.</li>
+<li><strong>Docker</strong>. Cog uses Docker to create a container for your model. You'll need to <a href="https://docs.docker.com/get-docker/">install Docker</a> before you can run Cog.</li>
+</ul>
+<h2 id="install-cog">Install Cog<a class="headerlink" href="#install-cog" title="Permanent link">#</a></h2>
+<p>First, install Cog:</p>
+<div class="highlight"><pre><span></span><code>sudo curl -o /usr/local/bin/cog -L https://github.com/replicate/cog/releases/latest/download/cog_<span class="sb">`</span>uname -s<span class="sb">`</span>_<span class="sb">`</span>uname -m<span class="sb">`</span>
+sudo chmod +x /usr/local/bin/cog
+</code></pre></div>
+<h2 id="create-a-project">Create a project<a class="headerlink" href="#create-a-project" title="Permanent link">#</a></h2>
+<p>Let's make a directory to work in:</p>
+<div class="codehilite"><pre><span></span><code>mkdir cog-quickstart
+cd cog-quickstart
+</code></pre></div>
+
+<h2 id="run-commands">Run commands<a class="headerlink" href="#run-commands" title="Permanent link">#</a></h2>
+<p>The simplest thing you can do with Cog is run a command inside a Docker environment.</p>
+<p>The first thing you need to do is create a file called <code>cog.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">python_version</span><span class="p">:</span> <span class="s">&quot;3.8&quot;</span>
+</code></pre></div>
+<p>Then, you can run any command inside this environment. For example, to get a Python shell:</p>
+<div class="codehilite"><pre><span></span><code>$ cog run python
+✓ Building Docker image from cog.yaml... Successfully built 8f54020c8981
+Running <span class="s1">&#39;python&#39;</span> <span class="k">in</span> Docker with the current directory mounted as a volume...
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Python <span class="m">3</span>.8.10 <span class="o">(</span>default, May <span class="m">12</span> <span class="m">2021</span>, <span class="m">23</span>:32:14<span class="o">)</span>
+<span class="o">[</span>GCC <span class="m">9</span>.3.0<span class="o">]</span> on linux
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>Inside this environment you can do anything – run a Jupyter notebook, your training script, your evaluation script, and so on.</p>
+<h2 id="run-predictions-on-a-model">Run predictions on a model<a class="headerlink" href="#run-predictions-on-a-model" title="Permanent link">#</a></h2>
+<p>Let's pretend we've trained a model. With Cog, we can define how to run predictions on it in a standard way, so other people can easily run predictions on it without having to hunt around for a prediction script.</p>
+<p>First, run this to get some pre-trained model weights:</p>
+<div class="codehilite"><pre><span></span><code>curl -O https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+</code></pre></div>
+
+<p>Then, we need to write some code to describe how predictions are run on the model. Save this to <code>predict.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">cog</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications.resnet50</span> <span class="kn">import</span> <span class="n">ResNet50</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications.resnet50</span> <span class="kn">import</span> <span class="n">preprocess_input</span><span class="p">,</span> <span class="n">decode_predictions</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">class</span> <span class="nc">ResNetPredictor</span><span class="p">(</span><span class="n">cog</span><span class="o">.</span><span class="n">Predictor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load the model into memory to make running multiple predictions efficient&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">ResNet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s1">&#39;resnet50_weights_tf_dim_ordering_tf_kernels.h5&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Define the arguments and types the model takes as input</span>
+    <span class="nd">@cog</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Image to classify&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Run a single prediction on the model&quot;&quot;&quot;</span>
+        <span class="c1"># Preprocess the image</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">preprocess_input</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="c1"># Run the prediction</span>
+        <span class="n">preds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="c1"># Return the top 3 predictions</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">decode_predictions</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+<p>We also need to point Cog at this, and tell it what Python dependencies to install. Update <code>cog.yaml</code> to look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">python_version</span><span class="p">:</span> <span class="s">&quot;3.8&quot;</span>
+  <span class="nt">python_packages</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pillow==8.3.1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tensorflow==2.5.0</span>
+<span class="nt">predict</span><span class="p">:</span> <span class="s">&quot;predict.py:ResNetPredictor&quot;</span>
+</code></pre></div>
+<p>Let's grab an image to test the model with:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">upload</span><span class="o">.</span><span class="n">wikimedia</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">wikipedia</span><span class="o">/</span><span class="n">commons</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="n">d</span><span class="o">/</span><span class="n">Cat_November_2010</span><span class="o">-</span><span class="mi">1</span><span class="n">a</span><span class="o">.</span><span class="n">jpg</span> <span class="o">&gt;</span> <span class="n">input</span><span class="o">.</span><span class="n">jpg</span>
+</code></pre></div>
+
+<p>Now, let's run the model using Cog:</p>
+<div class="highlight"><pre><span></span><code>$ cog predict -i @input.jpg
+...
+[
+  [
+    &quot;n02123159&quot;,
+    &quot;tiger_cat&quot;,
+    0.4874822497367859
+  ],
+  [
+    &quot;n02123045&quot;,
+    &quot;tabby&quot;,
+    0.23169134557247162
+  ],
+  [
+    &quot;n02124075&quot;,
+    &quot;Egyptian_cat&quot;,
+    0.09728282690048218
+  ]
+]
+</code></pre></div>
+<p>Looks like it worked!</p>
+<p>Note: The first time you run <code>cog predict</code>, the build process will be triggered to generate a Docker container that can run your model. The next time you run <code>cog predict</code> the pre-built container will be used.</p>
+<h2 id="build-an-image">Build an image<a class="headerlink" href="#build-an-image" title="Permanent link">#</a></h2>
+<p>We can bake your model's code, the trained weights, and the Docker environment into a Docker image. This image serves predictions with an HTTP server, and can be deployed to anywhere that Docker runs to serve real-time predictions.</p>
+<div class="highlight"><pre><span></span><code>$ cog build -t resnet
+Building Docker image...
+Built resnet:latest
+</code></pre></div>
+<p>You can run this image with <code>cog predict</code> by passing the image name as an argument:</p>
+<div class="highlight"><pre><span></span><code>$ cog predict resnet:latest -i @input.jpg
+</code></pre></div>
+<p>Or, you can run it with Docker directly, and it'll serve an HTTP server:</p>
+<div class="highlight"><pre><span></span><code>$ docker run -d -p 5000:5000 --gpus all resnet
+
+$ curl http://localhost:5000/predict -X POST -F input=@image.png
+</code></pre></div>
+<p>As a shorthand, you can add the image name as an extra line in <code>cog.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span> <span class="s">&quot;r8.im/replicate/resnet&quot;</span>
+</code></pre></div>
+<p>Once you've done this, you can use <code>cog push</code> to build and push the image to a Docker registry:</p>
+<div class="highlight"><pre><span></span><code>$ cog push
+Building r8.im/replicate/resnet...
+Pushing r8.im/replicate/resnet...
+Pushed!
+</code></pre></div>
+<p>The Docker image is now accessible to anyone or any system that has access to this Docker registry.</p>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<p>Those are the basics! Next, you might want to take a look at:</p>
+<ul>
+<li><a href="../getting-started-own-model/">A guide to help you set up your own model on Cog.</a></li>
+<li><a href="../yaml/">Reference for <code>cog.yaml</code></a></li>
+<li><a href="../python/">Reference for the Python library</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Cog
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../getting-started-own-model/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Using your own Model
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

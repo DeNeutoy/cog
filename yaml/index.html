@@ -1,0 +1,623 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../replicate.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>YAML Spec - Cog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cogyaml-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Cog" class="md-header__button md-logo" aria-label="Cog" data-md-component="logo">
+      
+  <img src="../replicate.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              YAML Spec
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cog" class="md-nav__button md-logo" aria-label="Cog" data-md-component="logo">
+      
+  <img src="../replicate.png" alt="logo">
+
+    </a>
+    Cog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Cog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started-own-model/" class="md-nav__link">
+        Using your own Model
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Cog Python API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          YAML Spec
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        YAML Spec
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    build
+  </a>
+  
+    <nav class="md-nav" aria-label="build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    cuda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    gpu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_packages" class="md-nav__link">
+    python_packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_version" class="md-nav__link">
+    python_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system_packages" class="md-nav__link">
+    system_packages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTRIBUTING/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/replicate/cog/blob/main/LICENSE" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    build
+  </a>
+  
+    <nav class="md-nav" aria-label="build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    cuda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    gpu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_packages" class="md-nav__link">
+    python_packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_version" class="md-nav__link">
+    python_version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system_packages" class="md-nav__link">
+    system_packages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="cogyaml-reference"><code>cog.yaml</code> reference<a class="headerlink" href="#cogyaml-reference" title="Permanent link">#</a></h1>
+<p><code>cog.yaml</code> defines how to build a Docker image and how to run predictions on your model inside that image.</p>
+<p>It has three keys: <a href="#build"><code>build</code></a>, <a href="#image"><code>image</code></a>, and <a href="#predict"><code>predict</code></a>. It looks a bit like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">python_version</span><span class="p">:</span> <span class="s">&quot;3.8&quot;</span>
+  <span class="nt">python_packages</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pytorch==1.4.0</span>
+  <span class="nt">system_packages</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;ffmpeg&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;libavcodec-dev&quot;</span>
+<span class="nt">predict</span><span class="p">:</span> <span class="s">&quot;predict.py:JazzSoloComposerPredictor&quot;</span>
+</code></pre></div>
+<p>Tip: Run <a href="getting-started-own-model#initialization"><code>cog init</code></a> to generate an annotated <code>cog.yaml</code> file that can be used as a starting point for setting up your model.</p>
+<h2 id="build"><code>build</code><a class="headerlink" href="#build" title="Permanent link">#</a></h2>
+<p>This stanza describes how to build the Docker image your model runs in. It contains various options within it:</p>
+<!-- Alphabetical order, please! -->
+
+<h3 id="cuda"><code>cuda</code><a class="headerlink" href="#cuda" title="Permanent link">#</a></h3>
+<p>Cog automatically picks the correct version of CUDA to install, but this lets you override it for whatever reason.</p>
+<h3 id="gpu"><code>gpu</code><a class="headerlink" href="#gpu" title="Permanent link">#</a></h3>
+<p>Enable GPUs for this model. When enabled, the <a href="https://github.com/NVIDIA/nvidia-docker">nvidia-docker</a> base image will be used, and Cog will automatically figure out what versions of CUDA and cuDNN to use based on the version of Python, PyTorch, and Tensorflow that you are using.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">gpu</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>When you use <code>cog run</code> or <code>cog predict</code>, Cog will automatically pass the <code>--gpus=all</code> flag to Docker. When you run a Docker image built with Cog, you'll need to pass this option to <code>docker run</code>.</p>
+<h3 id="python_packages"><code>python_packages</code><a class="headerlink" href="#python_packages" title="Permanent link">#</a></h3>
+<p>A list of Python packages to install, in the format <code>package==version</code>. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">python_packages</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pillow==8.3.1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tensorflow==2.5.0</span>
+</code></pre></div>
+<h3 id="python_version"><code>python_version</code><a class="headerlink" href="#python_version" title="Permanent link">#</a></h3>
+<p>The minor (<code>3.8</code>) or patch (<code>3.8.1</code>) version of Python to use. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">python_version</span><span class="p">:</span> <span class="s">&quot;3.8.1&quot;</span>
+</code></pre></div>
+<p>Cog supports all active branches of Python: 3.7, 3.8, 3.9, 3.10.</p>
+<p>Note that these are the versions supported <strong>in the Docker container</strong>, not your host machine. You can run any version(s) of Python you wish on your host machine.</p>
+<h3 id="run"><code>run</code><a class="headerlink" href="#run" title="Permanent link">#</a></h3>
+<p>A list of setup commands to run in the environment after your system packages and Python packages have been installed. If you're familiar with Docker, it's like a <code>RUN</code> instruction in your <code>Dockerfile</code>.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">run</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">curl -L https://github.com/cowsay-org/cowsay/archive/refs/tags/v3.7.0.tar.gz | tar -xzf -</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cd cowsay-3.7.0 &amp;&amp; make install</span>
+</code></pre></div>
+<p>Your code is <em>not</em> available to commands in <code>run</code>. This is so we can build your image efficiently when running locally.</p>
+<h3 id="system_packages"><code>system_packages</code><a class="headerlink" href="#system_packages" title="Permanent link">#</a></h3>
+<p>A list of Ubuntu APT packages to install. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build</span><span class="p">:</span>
+  <span class="nt">system_packages</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;ffmpeg&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;libavcodec-dev&quot;</span>
+</code></pre></div>
+<h2 id="image"><code>image</code><a class="headerlink" href="#image" title="Permanent link">#</a></h2>
+<p>The name given to built Docker images. If you want to push to a registry, this should also include the registry name.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span> <span class="s">&quot;r8.im/your-username/your-model&quot;</span>
+</code></pre></div>
+<p>r8.im is Replicate's registry, but this can be any Docker registry.</p>
+<p>If you don't provide this, a name will be generated from the directory name.</p>
+<h2 id="predict"><code>predict</code><a class="headerlink" href="#predict" title="Permanent link">#</a></h2>
+<p>The pointer to the <code>cog.Predictor</code> object in your code, which defines how predictions are run on your model.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">predict</span><span class="p">:</span> <span class="s">&quot;predict.py:HotdogPredictor&quot;</span>
+</code></pre></div>
+<p>See <a href="../python/">the Python API documentation for more information</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../python/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Cog Python API
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../CONTRIBUTING/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Contributing
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>
